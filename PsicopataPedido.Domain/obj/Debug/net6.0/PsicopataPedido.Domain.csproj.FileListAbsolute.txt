@@ -1,0 +1,12 @@
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\bin\Debug\net6.0\PsicopataPedido.Domain.deps.json
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\bin\Debug\net6.0\PsicopataPedido.Domain.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\bin\Debug\net6.0\PsicopataPedido.Domain.pdb
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.csproj.AssemblyReference.cache
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.AssemblyInfoInputs.cache
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.AssemblyInfo.cs
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\refint\PsicopataPedido.Domain.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\PsicopataPedido.Domain.pdb
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Domain\obj\Debug\net6.0\ref\PsicopataPedido.Domain.dll

@@ -1,0 +1,15 @@
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\bin\Debug\net6.0\PsicopataPedido.Application.deps.json
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\bin\Debug\net6.0\PsicopataPedido.Application.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\bin\Debug\net6.0\PsicopataPedido.Application.pdb
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\bin\Debug\net6.0\PsicopataPedido.Domain.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\bin\Debug\net6.0\PsicopataPedido.Domain.pdb
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.csproj.AssemblyReference.cache
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.AssemblyInfoInputs.cache
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.AssemblyInfo.cs
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.csproj.CopyComplete
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\refint\PsicopataPedido.Application.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\PsicopataPedido.Application.pdb
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Application\obj\Debug\net6.0\ref\PsicopataPedido.Application.dll

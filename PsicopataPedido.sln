@@ -3,9 +3,58 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AF3868E4-8B44-4E41-924E-3EF7B39CDA89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4CAEE195-9E5D-4D26-B9A0-6ADB45E86420}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{352A56B4-06C2-44D1-BEAA-914ADDD84E01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PsicopataPedido.Domain", "PsicopataPedido.Domain\PsicopataPedido.Domain.csproj", "{29A60A57-7D61-409B-8611-120129EA85ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{2037F53C-26CA-4FB7-90F3-5D78F5552E26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{F062975D-9938-484E-9DB7-AE3B5E2E8B24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PsicopataPedido.Application", "PsicopataPedido.Application\PsicopataPedido.Application.csproj", "{1A0D13C7-8511-4B1C-BADF-1423AD819036}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PsicopataPedido.Infraestructrue", "PsicopataPedido.Infraestructrue\PsicopataPedido.Infraestructrue.csproj", "{D07ABB2D-93B3-4271-82A2-1EA57D0EDDA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsicopataPedido.VIEW", "PsicopataPedido.VIEW\PsicopataPedido.VIEW.csproj", "{F9AF1A43-C0B6-4D7E-842E-768786E99C93}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29A60A57-7D61-409B-8611-120129EA85ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A60A57-7D61-409B-8611-120129EA85ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A60A57-7D61-409B-8611-120129EA85ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A60A57-7D61-409B-8611-120129EA85ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A0D13C7-8511-4B1C-BADF-1423AD819036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0D13C7-8511-4B1C-BADF-1423AD819036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0D13C7-8511-4B1C-BADF-1423AD819036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0D13C7-8511-4B1C-BADF-1423AD819036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07ABB2D-93B3-4271-82A2-1EA57D0EDDA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07ABB2D-93B3-4271-82A2-1EA57D0EDDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07ABB2D-93B3-4271-82A2-1EA57D0EDDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07ABB2D-93B3-4271-82A2-1EA57D0EDDA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9AF1A43-C0B6-4D7E-842E-768786E99C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9AF1A43-C0B6-4D7E-842E-768786E99C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9AF1A43-C0B6-4D7E-842E-768786E99C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9AF1A43-C0B6-4D7E-842E-768786E99C93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{352A56B4-06C2-44D1-BEAA-914ADDD84E01} = {AF3868E4-8B44-4E41-924E-3EF7B39CDA89}
+		{29A60A57-7D61-409B-8611-120129EA85ED} = {352A56B4-06C2-44D1-BEAA-914ADDD84E01}
+		{2037F53C-26CA-4FB7-90F3-5D78F5552E26} = {AF3868E4-8B44-4E41-924E-3EF7B39CDA89}
+		{F062975D-9938-484E-9DB7-AE3B5E2E8B24} = {AF3868E4-8B44-4E41-924E-3EF7B39CDA89}
+		{1A0D13C7-8511-4B1C-BADF-1423AD819036} = {352A56B4-06C2-44D1-BEAA-914ADDD84E01}
+		{D07ABB2D-93B3-4271-82A2-1EA57D0EDDA9} = {2037F53C-26CA-4FB7-90F3-5D78F5552E26}
+		{F9AF1A43-C0B6-4D7E-842E-768786E99C93} = {F062975D-9938-484E-9DB7-AE3B5E2E8B24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89D362B7-FB2B-4B0E-9A05-74D3C1A2A347}
