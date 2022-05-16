@@ -12,7 +12,7 @@ using PsicopataPedido.Infraestructrue.Context;
 namespace PsicopataPedido.Infraestructrue.Migrations
 {
     [DbContext(typeof(PsicopataPedidoContext))]
-    [Migration("20220515165934_firstMigration")]
+    [Migration("20220516160346_firstMigration")]
     partial class firstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,12 +74,12 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,4)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserID");
 
                     b.ToTable("ordens");
                 });
@@ -128,10 +128,10 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("date")
@@ -201,20 +201,32 @@ namespace PsicopataPedido.Infraestructrue.Migrations
 
             modelBuilder.Entity("PsicopataPedido.Domain.Entities.Orden", b =>
                 {
-                    b.HasOne("PsicopataPedido.Domain.Entities.User", null)
+                    b.HasOne("PsicopataPedido.Domain.Entities.User", "User")
                         .WithMany("ordens")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PsicopataPedido.Domain.Entities.ShoppingList", b =>
                 {
-                    b.HasOne("PsicopataPedido.Domain.Entities.Product", null)
+                    b.HasOne("PsicopataPedido.Domain.Entities.Product", "Product")
                         .WithMany("ShoppingLists")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("PsicopataPedido.Domain.Entities.User", null)
+                    b.HasOne("PsicopataPedido.Domain.Entities.User", "User")
                         .WithMany("ShoppingLists")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PsicopataPedido.Domain.Entities.Product", b =>

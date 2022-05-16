@@ -1,4 +1,6 @@
-﻿using PsicopataPedido.Application.Dtos;
+﻿using AutoMapper;
+using PsicopataPedido.Application.Dtos;
+using PsicopataPedido.Application.Interfaces;
 using PsicopataPedido.Application.Interfaces.Interfaces;
 using PsicopataPedido.Domain.Entities;
 using System;
@@ -11,29 +13,43 @@ namespace PsicopataPedido.Application.Services
 {
     public class ShoppingListServices : IShoppingListServices
     {
+        IShoppingListRepository _shopping;
+        IMapper _mapper;
+
+        public ShoppingListServices(IShoppingListRepository shopping, IMapper mapper)
+        {
+            _shopping = shopping;
+            _mapper = mapper;
+        }
         public Task<ShoppingList> delete(int id)
         {
-            throw new NotImplementedException();
+            return _shopping.DeleteById(id);
         }
 
-        public Task<IEnumerable<ShoppingList>> GetAll()
+        public async Task<IEnumerable<ShoppingList>> GetAll()
         {
-            throw new NotImplementedException();
+            var shopping = await _shopping.GetAll();
+
+            return shopping;
         }
 
         public Task<ShoppingList> getOne(int id)
         {
-            throw new NotImplementedException();
+            return _shopping.GetById(id);
         }
 
         public ShoppingListDto save(ShoppingListDto entity)
         {
-            throw new NotImplementedException();
+            var shopping = _mapper.Map<ShoppingList>(entity);
+            _shopping.Save(shopping);
+            return entity;
         }
 
         public ShoppingListDto update(ShoppingListDto entity)
         {
-            throw new NotImplementedException();
+            var shopping = _mapper.Map<ShoppingList>(entity);
+            _shopping.Update(shopping);
+            return entity;
         }
     }
 }

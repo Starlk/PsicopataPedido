@@ -16,13 +16,16 @@ namespace PsicopataPedido.Infraestructrue.IoC
     {
         public static IServiceCollection AddRegisterServices(this IServiceCollection services) 
         {
-
+     
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProductServices, ProductServices>();
             services.AddScoped<IProductRepository, ProductoRepository>();
             services.AddScoped<IShoppingListServices, ShoppingListServices>();
             services.AddScoped<IShoppingListRepository, ShoppinListRepository>();
+            services.AddScoped<ICategoryServices, CategoryServices>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
             return services;
         }
     }

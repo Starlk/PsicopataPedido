@@ -10,5 +10,7 @@ namespace PsicopataPedido.Domain.Entities
     {
     
         public decimal Total { get; set; }
+        public int UserID { get; set; }
+        public User User { get; set; }
     }
 }

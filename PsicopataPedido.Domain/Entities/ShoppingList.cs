@@ -11,5 +11,11 @@ namespace PsicopataPedido.Domain.Entities
         public int Count { get; set; }
         public DateTime date { get; set; }
 
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+
+        public int UserId { get; set; }
+        public User User { get; set; }
+
     }
 }

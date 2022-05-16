@@ -90,17 +90,18 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Total = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    UserID = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ordens", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ordens_users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_ordens_users_UserID",
+                        column: x => x.UserID,
                         principalTable: "users",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,8 +112,8 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Count = table.Column<int>(type: "int", nullable: false),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -122,12 +123,14 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                         name: "FK_ShoppingLists_products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "products",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ShoppingLists_users_UserId",
                         column: x => x.UserId,
                         principalTable: "users",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -136,9 +139,9 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                 column: "productsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ordens_UserId",
+                name: "IX_ordens_UserID",
                 table: "ordens",
-                column: "UserId");
+                column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ShoppingLists_ProductId",
