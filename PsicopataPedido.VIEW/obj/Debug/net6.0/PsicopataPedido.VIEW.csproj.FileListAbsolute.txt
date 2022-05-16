@@ -65,3 +65,10 @@ C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\ob
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\obj\Debug\net6.0\PsicopataPedido.VIEW.pdb
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\obj\Debug\net6.0\PsicopataPedido.VIEW.genruntimeconfig.cache
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\obj\Debug\net6.0\ref\PsicopataPedido.VIEW.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Scrutor.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

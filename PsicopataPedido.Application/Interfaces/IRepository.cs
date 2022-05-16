@@ -12,7 +12,8 @@ namespace PsicopataPedido.Application.Interfaces
         Task<T> GetById(int id);
         Task<T> Save(T entity);
         Task<T> DeleteById(int id);
-        Task<T> Update(int id, T entity);
+        Task<T> Update(T entity);
+        Task<IEnumerable<T>> GetAll();
         
     } 
 }

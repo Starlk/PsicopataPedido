@@ -10,13 +10,17 @@ namespace PsicopataPedido.Infraestructrue.Context
 {
     public class PsicopataPedidoContext : DbContext
     {
+        public PsicopataPedidoContext()
+        {
+        }
+
         public PsicopataPedidoContext(DbContextOptions<PsicopataPedidoContext> options) : base(options) { }
 
-        DbSet<User> users { get; set; }
-        DbSet<Product> products { get; set; }
-        DbSet<Category> categories { get; set; }
-        DbSet<ShoppingList> ShoppingLists { get; set; }
-        DbSet<Orden> ordens { get; set; }   
+        public DbSet<User> users { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<Category> categories { get; set; }
+        public DbSet<ShoppingList> ShoppingLists { get; set; }
+        public DbSet<Orden> ordens { get; set; }   
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
