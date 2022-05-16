@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using PsicopataPedido.Application.Dtos;
 using PsicopataPedido.Application.Interfaces;
 using PsicopataPedido.Application.Interfaces.Interfaces;
+using PsicopataPedido.Domain.constantes;
 using PsicopataPedido.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -51,12 +52,11 @@ namespace PsicopataPedido.Application.Services
             return _user.GetById(id);
         }
 
-        public bool login(UserDto user)
+        public User login(UserDto user)
         {
             var isRegister = _mapper.Map<User>(user);
-            var result = _user.Login(isRegister).Result;
-            if (result != null) return true;
-            return false;
+            return _user.Login(isRegister).Result;
+           
         }
 
         public UserDto save(UserDto userDto)
@@ -65,15 +65,16 @@ namespace PsicopataPedido.Application.Services
             _user.Save(user);
             return userDto;
         }
-        public string CreateToken(UserDto user,string value) 
+        public string CreateToken(User user,string value) 
         {
             List<Claim> clams = new List<Claim>
             {
                 new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.isAdmin ? ApiRoles.admin :ApiRoles.client)
          
             };
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(value));
-            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+            var cred = new SigningCredentials(key,   SecurityAlgorithms.HmacSha512Signature);
            var token =  new JwtSecurityToken(claims:clams,expires:DateTime.Now.AddDays(5), signingCredentials:cred);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

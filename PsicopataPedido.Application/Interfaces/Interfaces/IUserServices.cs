@@ -10,7 +10,7 @@ namespace PsicopataPedido.Application.Interfaces.Interfaces
 {
     public interface IUserServices : IServices<UserDto, User>
     {
-        bool login(UserDto user);
-        string CreateToken(UserDto user, string value);
+        User login(UserDto user);
+        string CreateToken(User user, string value);
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PsicopataPedido.Application.Dtos;
 using PsicopataPedido.Application.Interfaces.Interfaces;
+using PsicopataPedido.Domain.constantes;
 using PsicopataPedido.Domain.Entities;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,7 +11,7 @@ namespace PsicopataPedido.VIEW.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = ApiRoles.admin)]
     public class ProductController : ControllerBase
     {
         private readonly IProductServices _product;

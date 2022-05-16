@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PsicopataPedido.Application.Dtos;
 using PsicopataPedido.Application.Interfaces.Interfaces;
+using PsicopataPedido.Domain.constantes;
 using PsicopataPedido.Domain.Entities;
 using PsicopataPedido.VIEW.Modal;
 
@@ -21,7 +22,7 @@ namespace PsicopataPedido.VIEW.Controllers
             _user = user;
             _conf = conf;
         }
-        [HttpGet, Authorize]
+        [HttpGet, Authorize(Roles =ApiRoles.admin)]
         public async Task<IEnumerable<User>> Get()
         {
             return await _user.GetAll();
@@ -45,8 +46,9 @@ namespace PsicopataPedido.VIEW.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginDto value) 
         {
-            var user = new UserDto() { Email = value.Email, Password = value.Password };
-            if (_user.login(user)) return Ok(_user.CreateToken(user, "Pato053434ffdfdssdfsdv"));
+            var CredUser = new UserDto() { Email = value.Email, Password = value.Password };
+            var result = _user.login(CredUser);
+            if (result !=null) return Ok(_user.CreateToken(result, "Pato053434ffdfdssdfsdv"));
             return BadRequest("este usuario no existe");
         }
 
