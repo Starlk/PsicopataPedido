@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "jnPnFg4e6JiblBybfTn09yzl8UNJsTRUp0Vm0Wbs/dJh2NMSgFCGNE2bZ/jcPMnhDvXvBBs9LAlNJ/3yM58hSw==",
+  "dgSpecHash": "Cy3HpFtxJK75o9Ao3pTG1eIJhIlakeD4mOsVpagWtGaz0qkwN/HRBBSheoqZM2lBb6JonRgiHJJJCFlQWCfGzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lenovo\\Documents\\Works\\Net core\\PsicopataPedido\\PsicopataPedido.Testing\\PsicopataPedido.Testing.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\fluentvalidation\\11.0.1\\fluentvalidation.11.0.1.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.0.1\\fluentvalidation.aspnetcore.11.0.1.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.0.1\\fluentvalidation.dependencyinjectionextensions.11.0.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

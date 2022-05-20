@@ -41,9 +41,10 @@ namespace PsicopataPedido.VIEW.Controllers
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public async Task<CategoryDto> Put([FromBody] CategoryDto value)
+        public async Task<CategoryDto> Put(int id, [FromBody] CategoryDto value)
         {
-            return _category.update(value);
+            Console.WriteLine(id);
+            return _category.update(id,value);
         }
 
         // DELETE api/<UserController>/5

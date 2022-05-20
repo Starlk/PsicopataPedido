@@ -22,7 +22,7 @@ namespace PsicopataPedido.VIEW.Controllers
             _user = user;
             _conf = conf;
         }
-        [HttpGet, Authorize(Roles =ApiRoles.admin)]
+        [HttpGet]
         public async Task<IEnumerable<User>> Get()
         {
             return await _user.GetAll();
@@ -53,14 +53,14 @@ namespace PsicopataPedido.VIEW.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}"), Authorize]
-        public  async Task<UserDto> Put([FromBody] UserDto value)
+        [HttpPut("{id}")]
+        public  async Task<UserDto> Put(int id,[FromBody] UserDto value)
         {
-           return _user.update(value);
+           return _user.update(id,value);
         }
 
         // DELETE api/<UserController>/5
-        [HttpDelete("{id}"), Authorize]
+        [HttpDelete("{id}")]
         public Task<User> Delete(int id)
         {
             return _user.delete(id);

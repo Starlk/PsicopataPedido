@@ -72,3 +72,6 @@ C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bi
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Scrutor.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.VIEW\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

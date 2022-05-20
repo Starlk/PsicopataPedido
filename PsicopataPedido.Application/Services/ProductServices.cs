@@ -44,7 +44,7 @@ namespace PsicopataPedido.Application.Services
             return entity;
         }
 
-        public ProductDto update(ProductDto entity)
+        public ProductDto update(int id, ProductDto entity)
         {
             var product = _mapper.Map<Product>(entity);
             _product.Update(product);

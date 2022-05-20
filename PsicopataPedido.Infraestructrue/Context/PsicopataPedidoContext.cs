@@ -21,6 +21,7 @@ namespace PsicopataPedido.Infraestructrue.Context
         public DbSet<Category> categories { get; set; }
         public DbSet<ShoppingList> ShoppingLists { get; set; }
         public DbSet<Orden> ordens { get; set; }   
+        public DbSet<OrderList> orderlist { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

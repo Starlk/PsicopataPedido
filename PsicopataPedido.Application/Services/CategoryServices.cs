@@ -44,7 +44,7 @@ namespace PsicopataPedido.Application.Services
             return entity;
         }
 
-        public CategoryDto update(CategoryDto entity)
+        public CategoryDto update(int id, CategoryDto entity)
         {
             var category = _mapper.Map<Category>(entity);
             _category.Update(category);

@@ -40,9 +40,9 @@ namespace PsicopataPedido.VIEW.Controllers
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public async Task<ProductDto> Put([FromBody] ProductDto value)
+        public async Task<ProductDto> Put(int id, [FromBody] ProductDto value)
         {
-            return _product.update(value);
+            return _product.update(id,value);
         }
 
         // DELETE api/<UserController>/5

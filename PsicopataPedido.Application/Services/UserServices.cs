@@ -18,24 +18,18 @@ namespace PsicopataPedido.Application.Services
 {
     public class UserServices : IUserServices
     {
-        IUserRepository _user;
-        IMapper _mapper;
+        private readonly IUserRepository _user;
+        protected readonly IMapper _mapper;
 
         public UserServices(IUserRepository user, IMapper mapper)
         {
             _user = user;
             _mapper = mapper;
-            
-
         }
-
-  
 
         public Task<User> delete(int id)
         {
-            
              return _user.DeleteById(id);
-            
         }
 
 
@@ -75,14 +69,16 @@ namespace PsicopataPedido.Application.Services
             };
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(value));
             var cred = new SigningCredentials(key,   SecurityAlgorithms.HmacSha512Signature);
-           var token =  new JwtSecurityToken(claims:clams,expires:DateTime.Now.AddDays(5), signingCredentials:cred);
+            var token =  new JwtSecurityToken(claims:clams,expires:DateTime.Now.AddDays(5), signingCredentials:cred);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public UserDto update(UserDto entity)
+        public UserDto update(int id,UserDto entity)
         {
+     
             var user = _mapper.Map<User>(entity);
+            user.Id = id;
             _user.Update(user);
             return entity;
         }

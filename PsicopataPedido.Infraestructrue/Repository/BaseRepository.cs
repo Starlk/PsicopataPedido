@@ -30,8 +30,10 @@ namespace PsicopataPedido.Infraestructrue.Repository
 
         public async Task<IEnumerable<TEntity>> GetAll()
         {
-           return await _context.Set<TEntity>().ToListAsync();
-           
+            var response = from entity in _context.Set<TEntity>()
+                          where entity.IsDeleted == false
+                          select entity;
+            return response;
         }
 
         public async Task<TEntity> GetById(int id)
@@ -50,8 +52,8 @@ namespace PsicopataPedido.Infraestructrue.Repository
 
         public async Task<TEntity> Update(TEntity entity)
         {
-            _context.Set<TEntity>().Attach(entity);
-            _context.Entry(entity).State =  EntityState.Modified;
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
             return entity;
         }
     }

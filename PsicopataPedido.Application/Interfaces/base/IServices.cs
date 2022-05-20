@@ -10,7 +10,7 @@ namespace PsicopataPedido.Application.Interfaces.Interfaces
     {
         TEntityDto save(TEntityDto entity);
         Task<TEntity> delete(int id);
-        TEntityDto update(TEntityDto entity);
+        TEntityDto update(int id,TEntityDto entity);
         Task<IEnumerable<TEntity>> GetAll();
 
         Task<TEntity> getOne(int id);

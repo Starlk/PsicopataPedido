@@ -45,7 +45,7 @@ namespace PsicopataPedido.Application.Services
             return entity;
         }
 
-        public ShoppingListDto update(ShoppingListDto entity)
+        public ShoppingListDto update(int id, ShoppingListDto entity)
         {
             var shopping = _mapper.Map<ShoppingList>(entity);
             _shopping.Update(shopping);

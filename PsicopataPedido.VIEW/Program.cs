@@ -6,6 +6,7 @@ using PsicopataPedido.Application.Interfaces;
 using PsicopataPedido.Application.Interfaces.Interfaces;
 using PsicopataPedido.Application.IoC;
 using PsicopataPedido.Application.Services;
+using PsicopataPedido.Domain.constantes;
 using PsicopataPedido.Infraestructrue.Context;
 using PsicopataPedido.Infraestructrue.IoC;
 using PsicopataPedido.Infraestructrue.Repository;
@@ -17,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 string myConnection = builder.Configuration.GetConnectionString("defaultConnection");
-
+string myCors = "patito";
 
 
 builder.Services.AddControllers();
@@ -39,6 +40,7 @@ builder.Services.AddDbContext<PsicopataPedidoContext>(op => op.UseSqlServer(buil
 builder.Services.AddRegisterServices();
 
 builder.Services.AddAppRegister(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddValidator();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -52,7 +54,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-
+builder.Services.AddCors(op => 
+{
+    op.AddPolicy(name: Core.MyCore, builder =>
+    {
+        //builder.WithOrigins("https://localhost:7103");
+       builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -63,7 +74,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(Core.MyCore);
 app.UseAuthentication();
 app.UseAuthorization();
 
