@@ -11,26 +11,27 @@ namespace PsicopataPedido.VIEW.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = ApiRoles.admin)]
+
     public class ProductController : ControllerBase
     {
         private readonly IProductServices _product;
 
         public ProductController(IProductServices product) => _product = product;
         [HttpGet]
+        [Authorize]
         public async Task<IEnumerable<Product>> Get()
         {
             return await _product.GetAll();
         }
 
-        // GET api/<UserController>/5
+        [Authorize]
         [HttpGet("{id}")]
         public Task<Product> Get(int id)
         {
             return _product.getOne(id);
         }
 
-        // POST api/<UserController>
+        [Authorize(Roles = ApiRoles.admin)]
         [HttpPost]
         public ProductDto Post([FromBody] ProductDto value)
         {
@@ -38,14 +39,14 @@ namespace PsicopataPedido.VIEW.Controllers
 
         }
 
-        // PUT api/<UserController>/5
+        [Authorize(Roles = ApiRoles.admin)]
         [HttpPut("{id}")]
         public async Task<ProductDto> Put(int id, [FromBody] ProductDto value)
         {
             return _product.update(id,value);
         }
 
-        // DELETE api/<UserController>/5
+        [Authorize(Roles = ApiRoles.admin)]
         [HttpDelete("{id}")]
         public Task<Product> Delete(int id)
         {

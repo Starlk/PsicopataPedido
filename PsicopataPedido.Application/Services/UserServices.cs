@@ -26,21 +26,14 @@ namespace PsicopataPedido.Application.Services
             _user = user;
             _mapper = mapper;
         }
-
         public Task<User> delete(int id)
         {
              return _user.DeleteById(id);
         }
-
-
-
         public async Task<IEnumerable<User>> GetAll()
         {
-            var userList = await _user.GetAll();
-
-            return userList;
+            return await _user.GetAll();
         }
-
         public Task<User> getOne(int id)
         {
             return _user.GetById(id);
@@ -50,9 +43,7 @@ namespace PsicopataPedido.Application.Services
         {
             var isRegister = _mapper.Map<User>(user);
             return _user.Login(isRegister).Result;
-           
         }
-
         public UserDto save(UserDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
@@ -63,20 +54,18 @@ namespace PsicopataPedido.Application.Services
         {
             List<Claim> clams = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, $"{user.Id}"),
                 new Claim(ClaimTypes.Role, user.isAdmin ? ApiRoles.admin :ApiRoles.client)
          
             };
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(value));
-            var cred = new SigningCredentials(key,   SecurityAlgorithms.HmacSha512Signature);
+            var cred = new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
             var token =  new JwtSecurityToken(claims:clams,expires:DateTime.Now.AddDays(5), signingCredentials:cred);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
         public UserDto update(int id,UserDto entity)
         {
-     
             var user = _mapper.Map<User>(entity);
             user.Id = id;
             _user.Update(user);

@@ -16,12 +16,10 @@ namespace PsicopataPedido.Infraestructrue.Repository
         {
             _context = context;
         }
-
         public  async Task<User> Login(User user)
         {
-            return  _context.users.Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault();
+            return _context.users.Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault();
             
-
         }
     }
 }

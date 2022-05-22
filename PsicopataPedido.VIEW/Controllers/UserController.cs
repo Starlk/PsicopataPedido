@@ -23,19 +23,17 @@ namespace PsicopataPedido.VIEW.Controllers
             _conf = conf;
         }
         [HttpGet]
+        [Authorize]
         public async Task<IEnumerable<User>> Get()
         {
             return await _user.GetAll();
         }
-
-        // GET api/<UserController>/5
         [HttpGet("{id}"), Authorize]
+        [Authorize]
         public Task<User> Get(int id)
         {
             return _user.getOne(id);
         }
-
-        // POST api/<UserController>
         [HttpPost]
         public UserDto Post([FromBody] UserDto value)
         {
@@ -51,15 +49,12 @@ namespace PsicopataPedido.VIEW.Controllers
             if (result !=null) return Ok(_user.CreateToken(result, "Pato053434ffdfdssdfsdv"));
             return BadRequest("este usuario no existe");
         }
-
-        // PUT api/<UserController>/5
+        [Authorize]
         [HttpPut("{id}")]
         public  async Task<UserDto> Put(int id,[FromBody] UserDto value)
         {
            return _user.update(id,value);
         }
-
-        // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
         public Task<User> Delete(int id)
         {
