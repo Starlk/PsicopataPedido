@@ -16,37 +16,34 @@ namespace PsicopataPedido.VIEW.Controllers
     public class ShoppingListController : ControllerBase
     {
         private readonly IShoppingListServices _shopping;
-
         public ShoppingListController(IShoppingListServices shopping) => _shopping = shopping;
         [HttpGet]
         public async Task<IEnumerable<ShoppingList>> Get()
         {
             return await _shopping.GetAll();
         }
-
-        // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public Task<ShoppingList> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return _shopping.getOne(id);
+            var list = await _shopping.GetShoppingListAsync(id);
+            if (list.Count() < 0) return NotFound("Not found items at car");
+            return Ok(list);
         }
 
-        // POST api/<UserController>
         [HttpPost]
-        public ShoppingListDto Post([FromBody] ShoppingListDto value)
+        public async Task<IActionResult> Post([FromBody] ShoppingListDto value)
         {
-            return _shopping.save(value);
-
+            var response = await  _shopping.save(value);
+            if (response == value) return Ok(response);
+            return BadRequest(response);
         }
-
-        // PUT api/<UserController>/5
         [HttpPut("{id}")]
         public async Task<ShoppingListDto> Put(int id,[FromBody] ShoppingListDto value)
         {
             return _shopping.update(id, value);
         }
 
-        // DELETE api/<UserController>/5
+   
         [HttpDelete("{id}")]
         public Task<ShoppingList> Delete(int id)
         {

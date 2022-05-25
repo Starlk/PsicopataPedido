@@ -14,5 +14,11 @@ namespace PsicopataPedido.Infraestructrue.Repository
         public ProductoRepository(PsicopataPedidoContext context) : base(context)
         {
         }
+
+        public async void discountProductStock(Product product, int count)
+        {
+            product.Stock = product.Stock - count;
+            await base.Update(product);
+        }
     }
 }

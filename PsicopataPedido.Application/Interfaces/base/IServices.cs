@@ -8,7 +8,8 @@ namespace PsicopataPedido.Application.Interfaces.Interfaces
 {
     public interface IServices<TEntityDto, TEntity> where TEntityDto :class 
     {
-        TEntityDto save(TEntityDto entity);
+        Task<TEntityDto> save(TEntityDto entity);
+
         Task<TEntity> delete(int id);
         TEntityDto update(int id,TEntityDto entity);
         Task<IEnumerable<TEntity>> GetAll();

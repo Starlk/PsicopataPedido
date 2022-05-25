@@ -35,10 +35,10 @@ namespace PsicopataPedido.VIEW.Controllers
             return _user.getOne(id);
         }
         [HttpPost]
-        public UserDto Post([FromBody] UserDto value)
+        public async Task<UserDto> Post([FromBody] UserDto value)
         {
     
-           return _user.save(value);
+           return await _user.save(value);
             
         }
         [HttpPost("Login")]

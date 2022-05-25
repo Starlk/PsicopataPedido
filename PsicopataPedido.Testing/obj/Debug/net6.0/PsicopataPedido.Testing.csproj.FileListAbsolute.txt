@@ -12,9 +12,6 @@ C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
-C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
@@ -111,3 +108,6 @@ C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\obj\Debug\net6.0\PsicopataPedido.Testing.pdb
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\obj\Debug\net6.0\PsicopataPedido.Testing.genruntimeconfig.cache
 C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\obj\Debug\net6.0\ref\PsicopataPedido.Testing.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\lenovo\Documents\Works\Net core\PsicopataPedido\PsicopataPedido.Testing\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

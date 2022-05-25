@@ -9,5 +9,7 @@ namespace PsicopataPedido.Application.Interfaces
 {
     public interface IShoppingListRepository : IRepository<ShoppingList>
     {
+        Task<IEnumerable<ShoppingList>> GetShoppingListUserAsync(int id);
+        Task<bool> ExistShoppingItem(int user, int product);
     }
 }

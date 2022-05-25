@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PsicopataPedido.Application.Interfaces;
@@ -11,6 +12,7 @@ using PsicopataPedido.Infraestructrue.Context;
 using PsicopataPedido.Infraestructrue.IoC;
 using PsicopataPedido.Infraestructrue.Repository;
 using Swashbuckle.AspNetCore.Filters;
+using System.Net;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,8 +38,12 @@ builder.Services.AddSwaggerGen(options => {
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
+//builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration);
+//HttpClient.DefaultProxy = new WebProxy(new Uri("http://localhost:5000/"));
+
 builder.Services.AddDbContext<PsicopataPedidoContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddRegisterServices();
+
 
 builder.Services.AddAppRegister(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddValidator();
@@ -53,6 +59,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false
         };
     });
+
+// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddMicrosoftIdentityWebApi(options =>
+//{
+//    builder.Configuration.Bind("AzureAdB2C", options);
+
+//    options.TokenValidationParameters.NameClaimType = "name";
+//},
+//    options => { builder.Configuration.Bind("AzureAdB2C", options); });
+// //End of the Microsoft Identity platform block    
+
+
 
 builder.Services.AddCors(op => 
 {
@@ -76,6 +93,15 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors(Core.MyCore);
 app.UseAuthentication();
+//app.Use(async (context, next) =>
+//{
+//    if (!context.User.Identity?.IsAuthenticated ?? false)
+//    {
+//        context.Response.StatusCode = 401;
+//        await context.Response.WriteAsync("Not Access");
+//    }
+//    await next();
+//});
 app.UseAuthorization();
 
 app.MapControllers();

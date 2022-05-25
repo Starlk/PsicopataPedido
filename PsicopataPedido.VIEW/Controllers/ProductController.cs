@@ -33,9 +33,9 @@ namespace PsicopataPedido.VIEW.Controllers
 
         [Authorize(Roles = ApiRoles.admin)]
         [HttpPost]
-        public ProductDto Post([FromBody] ProductDto value)
+        public async Task<ProductDto> Post([FromBody] ProductDto value)
         {
-            return _product.save(value);
+            return await _product.save(value);
 
         }
 

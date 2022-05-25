@@ -33,9 +33,9 @@ namespace PsicopataPedido.VIEW.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public CategoryDto Post([FromBody] CategoryDto value)
+        public async Task<CategoryDto> Post([FromBody] CategoryDto value)
         {
-            return _category.save(value);
+            return await _category.save(value);
 
         }
 

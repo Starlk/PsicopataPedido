@@ -69,6 +69,9 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,4)");
 
@@ -82,6 +85,41 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                     b.ToTable("ordens");
                 });
 
+            modelBuilder.Entity("PsicopataPedido.Domain.Entities.OrderList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductoID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ordenId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("productId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ordenId");
+
+                    b.HasIndex("productId");
+
+                    b.ToTable("orderlist");
+                });
+
             modelBuilder.Entity("PsicopataPedido.Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -93,6 +131,9 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -206,6 +247,25 @@ namespace PsicopataPedido.Infraestructrue.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PsicopataPedido.Domain.Entities.OrderList", b =>
+                {
+                    b.HasOne("PsicopataPedido.Domain.Entities.Orden", "orden")
+                        .WithMany()
+                        .HasForeignKey("ordenId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PsicopataPedido.Domain.Entities.Product", "product")
+                        .WithMany()
+                        .HasForeignKey("productId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("orden");
+
+                    b.Navigation("product");
                 });
 
             modelBuilder.Entity("PsicopataPedido.Domain.Entities.ShoppingList", b =>

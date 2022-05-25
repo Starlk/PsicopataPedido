@@ -13,6 +13,7 @@ namespace PsicopataPedido.Domain.Entities
         public Orden orden { get; set; }
         public int ProductoID { get; set; }
         public Product product { get; set; }
+        public int quantity { get; set; }
 
     }
 }

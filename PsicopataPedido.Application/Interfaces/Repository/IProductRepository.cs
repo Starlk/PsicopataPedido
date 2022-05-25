@@ -10,5 +10,6 @@ namespace PsicopataPedido.Application.Interfaces
 {
     public interface IProductRepository : IRepository<Product>
     {
+        void discountProductStock(Product product, int count);
     }
 }

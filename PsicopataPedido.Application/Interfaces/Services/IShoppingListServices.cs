@@ -10,5 +10,6 @@ namespace PsicopataPedido.Application.Interfaces.Interfaces
 {
     public interface IShoppingListServices : IServices<ShoppingListDto, ShoppingList>
     {
+       Task<IEnumerable<ShoppingList>> GetShoppingListAsync(int id);
     }
 }

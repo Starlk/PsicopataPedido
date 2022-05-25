@@ -12,6 +12,7 @@ namespace PsicopataPedido.Application.Dtos
         public DateTime date { get; set; }
         public int ProductId { get; set; }
         public int UserId { get; set; }
-      
+       
+        public ProductDto? Product { get; set; }
     }
 }
